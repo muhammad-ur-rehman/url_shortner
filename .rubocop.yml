@@ -1,0 +1,114 @@
+require: rubocop-rspec
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/AbcSize:
+   Exclude:
+    - "db/migrate/*.rb"
+
+Metrics/ModuleLength:
+  Max: 150
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/MethodLength:
+  Max: 15
+  CountComments: false
+  Exclude:
+    - "db/migrate/*.rb"
+    - "features/step_definitions/*.rb"
+
+Layout/LineLength:
+  Max: 150
+  Exclude:
+    - "**/*_spec.rb"
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+      - "**/*_spec.rb"
+      - "lib/tasks/**"
+      - "spec/factories/*"
+      - "spec/swagger_helper.rb"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Naming/PredicateName:
+  Exclude:
+    - "features/pages/**"
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/response_helper.rb'
+    - 'spec/controllers/concerns/respondable_spec.rb'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'config/**/*'
+    - 'ng/**/*'
+    - 'node_modules/**/*'
+    - 'Gemfile'
+    - 'lib/tasks/**/*'
+    - 'lib/active_storage/service/multi_tenant_s3_service.rb'
+
+Style/HashSyntax:
+  Exclude:
+      - "**/*_spec.rb"
+
+Lint/EmptyBlock:
+    Exclude:
+      - 'spec/**/*'
+
+Lint/MissingSuper:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/HashLikeCase:
+  Enabled: false
+
+Lint/UnreachableLoop:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 12
+
+Metrics/PerceivedComplexity:
+  Max: 12
+
+Lint/DuplicateBranch:
+  Enabled: false
+
+Lint/FloatComparison:
+  Enabled: false
+
+Lint/SuppressedException:
+  Enabled: false

@@ -14,7 +14,7 @@ module FindUrlHelper
         cache_service = UrlCacheService.new(@url)
         cache_service.save_to_cache
       else
-        render_not_found( { error: 'URL not found' })
+        render_not_found({ error: 'URL not found' })
         nil
       end
     end

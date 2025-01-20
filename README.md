@@ -156,7 +156,7 @@ Authorization: Bearer <your_jwt_token>
   "key": "short_key",
   "click_count": 0,
   "expires_at": "2025-02-18T16:28:01.000Z",
-  "shortened_url": "/short_url?shortened_url=short_key"
+  "shortened_url": "/short_key"
 }
 ```
 
@@ -185,7 +185,7 @@ Authorization: Bearer <your_jwt_token>
       "key": "short_key",
       "click_count": 0,
       "expires_at": "2025-02-18T16:28:01.000Z",
-      "shortened_url": "/short_url?shortened_url=short_key"
+      "shortened_url": "/short_key"
     }
   ],
   "metadata": {
@@ -214,7 +214,7 @@ Authorization: Bearer <your_jwt_token>
   "key": "short_key",
   "click_count": 10,
   "expires_at": "2025-02-18T16:28:01.000Z",
-  "shortened_url": "/short_url?shortened_url=short_key"
+  "shortened_url": "/short_key"
 }
 ```
 

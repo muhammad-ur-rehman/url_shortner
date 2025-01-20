@@ -1,4 +1,3 @@
-# app/controllers/concerns/find_url_helper.rb
 module FindUrlHelper
   extend ActiveSupport::Concern
 

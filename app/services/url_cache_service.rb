@@ -1,8 +1,6 @@
 class UrlCacheService
   URL_CACHE_TIME = 12.hours
 
-  attr_reader :redis
-
   def initialize(url)
     @url = url
     @redis_key = generate_cache_key_for_url_by_id(@url.id) if url.present?
@@ -85,7 +83,7 @@ class UrlCacheService
   end
 
   def save_for_id(expiration_time)
-    if expiration_time > 0
+    if expiration_time.positive?
       redis.setex(@redis_key, expiration_time, @url.to_json)
     else
       Rails.logger.warn("Invalid expiration time for key #{@redis_key}. Key will not be saved.")
@@ -94,7 +92,7 @@ class UrlCacheService
 
   def save_for_key(expiration_time)
     key = generate_cache_key_for_shortened_url(@url.key)
-    if expiration_time > 0
+    if expiration_time.positive?
       redis.setex(key, expiration_time, @url.to_json)
     else
       Rails.logger.warn("Invalid expiration time for key #{key}. Key will not be saved.")

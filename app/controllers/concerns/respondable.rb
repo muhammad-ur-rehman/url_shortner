@@ -21,9 +21,9 @@ module Respondable
     render status: :ok, json: json_content
   end
 
-  # def render_unauthorized(json_content = {})
-  #   render status: :unauthorized, json: json_content
-  # end
+  def render_unauthorized(json_content = {})
+    render status: :unauthorized, json: json_content
+  end
 
   def render_unprocessable_entity(errors = [])
     render status: :unprocessable_entity, json: errors

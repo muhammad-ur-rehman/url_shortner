@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Api::RedirectController, type: :controller do
+  include Devise::Test::ControllerHelpers
+
   let(:url) { create(:url, original_url: 'https://example.com') }
   let(:expired_url) { create(:url, original_url: 'https://expired.com') }
 
@@ -29,6 +31,7 @@ RSpec.describe Api::RedirectController, type: :controller do
         expired_url.reload
         UrlCacheService.new(nil).redis.flushall
       end
+
       it 'returns a gone error' do
         get :show, params: { short_url: expired_url.key }
 

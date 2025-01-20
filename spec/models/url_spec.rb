@@ -104,7 +104,7 @@ RSpec.describe Url, type: :model do
 
     it 'deletes a URL' do
       url = create(:url)
-      expect { url.destroy }.to change { Url.count }.by(-1)
+      expect { url.destroy }.to change(Url, :count).by(-1)
     end
   end
 end

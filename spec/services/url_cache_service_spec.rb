@@ -10,7 +10,6 @@ RSpec.describe UrlCacheService, type: :service do
 
   describe '#save_to_cache' do
     it 'saves URL data to cache' do
-
       cache_service.save_to_cache
       expect(cache_service.redis.get(cache_service.send(:generate_cache_key_for_url_by_id, url.id))).to be_present
       expect(cache_service.redis.get(cache_service.send(:generate_cache_key_for_shortened_url, url.key))).to be_present
@@ -59,7 +58,7 @@ RSpec.describe UrlCacheService, type: :service do
       expected_data[:updated_at] = url.updated_at.to_datetime.change(nsec: 0)
 
       expected_data[:expires_at] = url.expires_at.to_datetime.change(nsec: 0) if url.expires_at
-  
+
       cached_data[:created_at] = DateTime.parse(cached_data[:created_at]).change(nsec: 0) if cached_data[:created_at]
       cached_data[:updated_at] = DateTime.parse(cached_data[:updated_at]).change(nsec: 0) if cached_data[:updated_at]
       cached_data[:expires_at] = DateTime.parse(cached_data[:expires_at]).change(nsec: 0) if cached_data[:expires_at]

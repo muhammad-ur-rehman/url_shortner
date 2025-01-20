@@ -7,8 +7,10 @@ Metrics/ClassLength:
   Max: 300
 
 Metrics/AbcSize:
-   Exclude:
+  Max: 18
+  Exclude:
     - "db/migrate/*.rb"
+    - "app/jobs/*.rb"
 
 Metrics/ModuleLength:
   Max: 150
@@ -30,7 +32,19 @@ Layout/LineLength:
 Style/Documentation:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/DescribedClass:
   Enabled: false
 
 Style/BlockComments:

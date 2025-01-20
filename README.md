@@ -68,6 +68,15 @@ This application provides a URL shortening service with JWT-based authentication
    bundle exec sidekiq
    ```
 
+7. Run the Specs:
+   ```bash
+   rspec
+   ```
+
+8. Run the rubocop:
+   ```bash
+   rubocop
+   ```
 ---
 
 ## API Endpoints

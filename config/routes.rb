@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   mount Sidekiq::Web => '/sidekiq'
   post 'auth/login', to: 'auth/sessions#create'
-  post 'auth/signup', to: 'auth/sessions#signup'  # Add this route for signup
+  post 'auth/signup', to: 'auth/sessions#signup'
 
   namespace :api do
     resources :urls, only: [:create, :index, :show]

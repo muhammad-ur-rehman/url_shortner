@@ -1,8 +1,8 @@
 module Respondable
   extend ActiveSupport::Concern
 
-  def render_not_found
-    render status: :not_found, json: { errors: { base: I18n.t('activerecord.errors.messages.not_found') } }
+  def render_not_found(json_content = {})
+    render status: :not_found, json: json_content
   end
 
   def render_no_content

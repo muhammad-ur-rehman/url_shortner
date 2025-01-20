@@ -1,5 +1,6 @@
 module FindUrlHelper
   extend ActiveSupport::Concern
+  include Respondable
 
   def find_url_by_id_or_key
     cached_url = fetch_cached_url
@@ -13,7 +14,7 @@ module FindUrlHelper
         cache_service = UrlCacheService.new(@url)
         cache_service.save_to_cache
       else
-        render json: { error: 'URL not found' }, status: :not_found
+        render_not_found( { error: 'URL not found' })
         nil
       end
     end

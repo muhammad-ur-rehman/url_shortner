@@ -59,21 +59,22 @@ This application provides a URL shortening service with JWT-based authentication
    ```
 
 5. Start the Rails server:
+      `Make sure you have Redis running as a service for background job application to work properly`
    ```bash
    rails server
    ```
 
-6. Start Sidekiq for background job processing:
+7. Start Sidekiq for background job processing:
    ```bash
    bundle exec sidekiq
    ```
 
-7. Run the Specs:
+8. Run the Specs:
    ```bash
    rspec
    ```
 
-8. Run the rubocop:
+9. Run the rubocop:
    ```bash
    rubocop
    ```
